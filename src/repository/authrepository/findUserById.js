@@ -1,9 +1,10 @@
-const User = require('../userModel.js')
+const User = require('../../userModel.js')
 
 
-const finduserbyid = async (req, res) => {  
+const finduserbyid = async (id) => {  
     try {
-        await User.findById();
+        const user = await User.findById(id);
+        return user;
     }
 
     catch(err) {

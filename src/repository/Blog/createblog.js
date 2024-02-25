@@ -1,7 +1,7 @@
 const Blog = require('../../blogModel')
 
 const createblog = async (Title, Body, Creator) => {
-    // try {
+    try {
         const blog = new Blog({ 
             Title: Title,
             Body: Body,
@@ -10,10 +10,10 @@ const createblog = async (Title, Body, Creator) => {
 
         await blog.save()
         return blog;
-    // }
-    // catch (err) {
+    }
+    catch (err) {
         return null
-    // }
+    }
 }
 
 module.exports = createblog;

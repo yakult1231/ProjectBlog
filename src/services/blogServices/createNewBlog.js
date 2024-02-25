@@ -1,7 +1,7 @@
 const createblog = require('../../repository/Blog/createblog');
 
 const createNewBlog = async (req, res) => {
-    // try {
+    try {
         console.log(req.user);
         const blog = await createblog(
             req.body.Title,
@@ -14,14 +14,14 @@ const createNewBlog = async (req, res) => {
             message: 'Blog Created Successfully',
             data: blog
         })  
-    // }
+    }
 
-    // catch(err) {
+    catch(err) {
         console.log(err.message)
         return res.status(500).json({
             message: 'Failed creating blog'
         });
-    // }
+    }
 }
 
 module.exports = createNewBlog

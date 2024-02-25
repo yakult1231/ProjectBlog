@@ -15,8 +15,8 @@ const login = async(req, res) => {
   
   const { password, ...userData} = user._doc
   
-  const token = jwt.sign({ _id: userData._id}, process.env.TOKEN)
-  const refreshToken = jwt.sign({ _id: userData._id}, process.env.REFRESH_TOKEN)
+  const token = jwt.sign({ userId: userData._id}, process.env.TOKEN)
+  const refreshToken = jwt.sign({ userId: userData._id}, process.env.REFRESH_TOKEN)
   res.status(200).json({ token: token, refreshToken: refreshToken, user: userData})
 }
 
