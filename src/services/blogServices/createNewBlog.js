@@ -5,7 +5,7 @@ const createNewBlog = async (req, res) => {
         console.log(req.user);
         const blog = await createblog(
             req.body.Title,
-            req.body.Content,
+            req.body.Body,
             req.user,
         );
         
